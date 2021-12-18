@@ -14407,8 +14407,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\nick8\\Desktop\\C#\\chefs_dishes\\Views\\Home\\NewDish.cshtml",
+      "TargetPath": "Views\\Home\\NewDish.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\nick8\\Desktop\\C#\\chefs_dishes\\Views\\Home\\NewChef.cshtml",
       "TargetPath": "Views\\Home\\NewChef.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\nick8\\Desktop\\C#\\chefs_dishes\\Views\\Home\\dishes.cshtml",
+      "TargetPath": "Views\\Home\\dishes.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -59,5 +59,61 @@ namespace chefs_dishes.Controllers
                 return View("NewChef");
             }
         }
+
+
+        //GET DISHES VIEW SHOWING ALL DISHES
+        [HttpGet("dishes")]
+        public ViewResult Dishes()
+        {
+            DishesView ViewModel = new DishesView()
+            {
+                //AllChefs = _context.chefs
+                  //  .Include(chf => chf.DishesCreated)
+                    //.ToList(),
+                AllDishes = _context.dishes
+                    .Include(dsh => dsh.CreatedBy)
+                    .ToList()
+            };
+            
+            return View(ViewModel);
+        }
+
+
+        //GET NEW DISH FORM
+        [HttpGet("dishes/new")]
+        public IActionResult NewDish()
+        {
+            /*NewDishView ViewModel = new NewDishView()
+            {
+                AvailableChefs = _context.chefs.ToList()
+                
+            };*/
+
+            Dish Form = new Dish()
+            {
+                AvailableChefs = _context.chefs.ToList()
+            };
+
+            return View(Form);
+        }
+
+
+        //CREATE DISH IN DB - POST METHOD
+        [HttpPost("dish/create")]
+        public IActionResult CreateDish(Dish fromForm)
+        {   
+            if(ModelState.IsValid)
+            {
+                _context.Add(fromForm);
+                _context.SaveChanges();
+
+                return RedirectToAction("Dishes");
+            }
+            else 
+            {
+                return View("NewDish");
+            }
+        }
+
     }
 }

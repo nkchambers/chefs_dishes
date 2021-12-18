@@ -35,7 +35,7 @@ namespace chefs_dishes.Models
         public string Description { get; set; }
 
         //Foreign Key for the Chef that created the dish
-        [Display(Name = "Created By: ")]
+        [Display(Name = "Chef: ")]
         public int ChefId { get; set; }
         
         //Navigation property for that actual Chef
