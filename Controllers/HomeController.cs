@@ -25,7 +25,7 @@ namespace chefs_dishes.Controllers
             {
                 AllChefs = _context.chefs
                     .Include(chf => chf.DishesCreated)
-                    .ToList(),
+                    .ToList()
                 //AllDishes = _context.dishes
                   //  .Include(dsh => dsh.CreatedBy)
                     //.ToList()
@@ -63,13 +63,13 @@ namespace chefs_dishes.Controllers
 
         //GET DISHES VIEW SHOWING ALL DISHES
         [HttpGet("dishes")]
-        public ViewResult Dishes()
+        public IActionResult Dishes()
         {
             DishesView ViewModel = new DishesView()
             {
-                //AllChefs = _context.chefs
-                  //  .Include(chf => chf.DishesCreated)
-                    //.ToList(),
+                AllChefs = _context.chefs
+                    .Include(chf => chf.DishesCreated)
+                    .ToList(),
                 AllDishes = _context.dishes
                     .Include(dsh => dsh.CreatedBy)
                     .ToList()
@@ -83,15 +83,16 @@ namespace chefs_dishes.Controllers
         [HttpGet("dishes/new")]
         public IActionResult NewDish()
         {
-            /*NewDishView ViewModel = new NewDishView()
-            {
-                AvailableChefs = _context.chefs.ToList()
+           // NewDishView ViewModel = new NewDishView()
+           // {
+           //     AvailableChefs = _context.chefs.ToList()
                 
-            };*/
+           // };
 
             Dish Form = new Dish()
             {
-                AvailableChefs = _context.chefs.ToList()
+                AvailableChefs = _context.chefs
+                .ToList()
             };
 
             return View(Form);
@@ -99,7 +100,7 @@ namespace chefs_dishes.Controllers
 
 
         //CREATE DISH IN DB - POST METHOD
-        [HttpPost("dish/create")]
+        [HttpPost("dishes/create")]
         public IActionResult CreateDish(Dish fromForm)
         {   
             if(ModelState.IsValid)

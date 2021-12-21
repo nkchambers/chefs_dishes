@@ -36,6 +36,7 @@ namespace chefs_dishes.Models
 
         //Foreign Key for the Chef that created the dish
         [Display(Name = "Chef: ")]
+        [Required]
         public int ChefId { get; set; }
         
         //Navigation property for that actual Chef
@@ -49,7 +50,7 @@ namespace chefs_dishes.Models
         [Display(Name ="Chef")]
         [Required(ErrorMessage = "Please select the chef who created the dish.")]
         [NotMapped]
-        public List<Chef> AvailableChefs { get; set; }
+        public List<Chef> AvailableChefs { get; set; } = new List<Chef>();
 
     }
 }
