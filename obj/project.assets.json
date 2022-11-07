@@ -907,11 +907,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nick8\\Desktop\\C#\\chefs_dishes\\chefs_dishes.csproj",
+      "projectUniqueName": "C:\\Users\\nick8\\Desktop\\Coding_Dojo\\C#\\chefs_dishes\\chefs_dishes.csproj",
       "projectName": "chefs_dishes",
-      "projectPath": "C:\\Users\\nick8\\Desktop\\C#\\chefs_dishes\\chefs_dishes.csproj",
+      "projectPath": "C:\\Users\\nick8\\Desktop\\Coding_Dojo\\C#\\chefs_dishes\\chefs_dishes.csproj",
       "packagesPath": "C:\\Users\\nick8\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nick8\\Desktop\\C#\\chefs_dishes\\obj\\",
+      "outputPath": "C:\\Users\\nick8\\Desktop\\Coding_Dojo\\C#\\chefs_dishes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nick8\\AppData\\Roaming\\NuGet\\NuGet.Config"
